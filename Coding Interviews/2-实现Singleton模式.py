@@ -1,3 +1,6 @@
+'''
+题目：设计一个类，我们只能生成该类的一个实例
+'''
 #通过_new_方法实现单例
 class Singleton1(object):
     def __new__(cls, *args, **kwargs):
