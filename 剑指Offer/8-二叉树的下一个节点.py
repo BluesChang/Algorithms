@@ -12,12 +12,15 @@
  则该节点的父节点下一个节点（如图节点I，沿着父节点一直向上查找找到B（B为其父节点的左子节点），
  则B的父节点A为下一个节点）。
 '''
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
         self.parent = None
+
 
 def next_node(pNode):
     if not pNode:

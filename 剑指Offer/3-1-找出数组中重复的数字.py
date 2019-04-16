@@ -10,14 +10,15 @@
 第三种方法最优，以下是实现
 '''
 
+
 def duplicate(arr):
-    if not isinstance(arr,list):
+    if not isinstance(arr, list):
         return -1
     length = len(arr)
     for i in range(length):
-        if not isinstance(arr[i],int):
+        if not isinstance(arr[i], int):
             return -1
-        if arr[i] < 0 or arr[i] > length-1:
+        if arr[i] < 0 or arr[i] > length - 1:
             return -1
     for i in range(length):
         while arr[i] != i:
@@ -27,7 +28,8 @@ def duplicate(arr):
             arr[i], arr[temp] = arr[temp], arr[i]
     return -1
 
-#测试用例
+
+# 测试用例
 # 长度为 n 的数组里包含一个或多个重复的数字
 test_case1 = [2, 3, 1, 0, 2, 5, 3]
 

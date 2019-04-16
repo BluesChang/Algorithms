@@ -8,17 +8,20 @@
 这个数字所在的列；如果该数字小于要查找的数字，则剔除这个数字所在的行。也就是说，如果要查找的数字不在数组的右上角，则每
 一次都在数组的查找范围中剔除一行或者一列，这样每一步都可以缩小查找的范围，直到找到要查找的数字，或者查找范围为空。
 '''
+
+
 class Solution:
     """
     @param matrix: matrix, a list of lists of integers
     @param target: An integer
     @return: a boolean, indicate whether matrix contains target
     """
+
     def searchMatrix(self, matrix, target):
         # write your code here
-        if not isinstance(matrix,list):
+        if not isinstance(matrix, list):
             return -1
-        if not isinstance(target,int):
+        if not isinstance(target, int):
             return -1
         if len(matrix) != 0:
             row = 0
@@ -26,14 +29,10 @@ class Solution:
             while row < len(matrix) and col >= 0:
                 if matrix[row][col] == target:
                     return True
-                elif  matrix[row][col] > target :
+                elif matrix[row][col] > target:
                     col -= 1
                 else:
                     row += 1
             return False
         else:
             return False
-
-
-
-

@@ -1,20 +1,26 @@
 '''
 题目一：求斐波那契数列的第n项
 '''
+
+
 class Solution:
     """
     @param n: an integer
     @return: an ineger f(n)
     """
+
     def fibonacci(self, n):
         # write your code here
         result = [0, 1]
-        for i in range(2,n+1):
-            result.append(result[i-1]+result[i-2])
+        for i in range(2, n + 1):
+            result.append(result[i - 1] + result[i - 2])
             return result[n]
 
-#最优写法 时间O（logn）
+
+# 最优写法 时间O（logn）
 import numpy as np
+
+
 def Fibonacci_Matrix(n):
     Matrix = np.matrix('1 1;1 0')
     if n == 1:
@@ -22,9 +28,10 @@ def Fibonacci_Matrix(n):
     if n == 2:
         return pow(Matrix, 2)
     elif n % 2 == 1:
-        return pow(Fibonacci_Matrix((n - 1) / 2),2) * Matrix
+        return pow(Fibonacci_Matrix((n - 1) / 2), 2) * Matrix
     else:
-        return pow(Fibonacci_Matrix(n / 2),2)
+        return pow(Fibonacci_Matrix(n / 2), 2)
+
 
 '''
 题目二：青蛙跳台阶问题

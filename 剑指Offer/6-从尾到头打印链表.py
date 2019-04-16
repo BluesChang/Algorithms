@@ -3,7 +3,8 @@
 输入一个链表的头节点，从尾到头反过来打印出每个节点的值。
 '''
 
-#Definition of ListNode
+
+# Definition of ListNode
 
 class ListNode(object):
 
@@ -11,14 +12,16 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-#递归
+
+# 递归
 def PrintListReversingly(head):
     if head:
         if head.next:
             PrintListReversingly(head.next)
         print(head.val)
 
-#栈
+
+# 栈
 def PrintListReversingly2(head):
     stack = []
     while head != None:
@@ -27,4 +30,3 @@ def PrintListReversingly2(head):
     while stack:
         print(stack.pop())
     print()
-

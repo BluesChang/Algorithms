@@ -1,6 +1,8 @@
 '''
 题目：用两个栈来实现一个队列，完成队列的Push、Pop、Top操作。
 '''
+
+
 class MyQueue:
 
     def __init__(self):
@@ -47,9 +49,12 @@ class MyQueue:
                 self.stack2.append(self.stack1.pop())
             return self.stack2.pop()
 
+
 '''
 题目：用两个队列实现一个栈，完成栈的Push、Pop操作。
 '''
+
+
 class QueueToStack:
     def __init__(self):
         self.queue1 = []
@@ -60,7 +65,6 @@ class QueueToStack:
             self.queue2.append(element)
         else:
             self.queue1.append(element)
-
 
     def pop(self):
         if not self.queue1 and not self.queue2:
