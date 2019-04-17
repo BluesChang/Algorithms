@@ -23,24 +23,47 @@ class Solution:
         if len(path) == path_length:
             return True
         has_path = False
-        if row >= 0 and row < rows and col >= 0 and col < cols and matrix[row * col + col] == path[path_length] and not \
-                matrix[row * col + col]:
+        if row >= 0 and row < rows and col >= 0 and col < cols and matrix[row * cols + col] == path[path_length] and not \
+                visited[row * cols + col]:
             path_length += 1
-            visited[row * col + col] = True
-            has_path = self.has_path_core(matrix, rows, cols, row - 1, col, path_length, visited) or self.has_path_core(
-                matrix, rows, cols, row + 1, col, path_length, visited) or self.has_path_core(matrix, rows, cols, row,
-                                                                                              col - 1, path_length,
-                                                                                              visited) or self.has_path_core(
-                matrix, rows, cols, row, col + 1, path_length, visited)
+            visited[row * cols + col] = True
+            has_path = self.has_path_core(matrix, rows, cols, row - 1, col, path, path_length, visited) \
+                       or self.has_path_core(matrix, rows, cols, row + 1, col, path, path_length, visited) \
+                       or self.has_path_core(matrix, rows, cols, row, col - 1, path, path_length, visited) \
+                       or self.has_path_core(matrix, rows, cols, row, col + 1, path, path_length, visited)
             if not has_path:
                 path_length -= 1
-                visited[rows * col + col] = False
+                visited[row * cols + col] = False
         return has_path
 
+
+class Solution2:
+    def has_path(self, matrix, rows, cols, path):
+        for row in range(rows):
+            for col in range(cols):
+                if matrix[row * cols + col] == path[0]:
+                    if self.find_path(list(matrix), rows, cols, path[1:], row, col):
+                        return True
+
+    def find_path(self, matrix, rows, cols, path, row, col):
+        if not path:
+            return True
+        matrix[row * cols + col] = 0
+        if col + 1 < cols and matrix[row * cols + col + 1] == path[0]:
+            return self.find_path(matrix, rows, cols, path[1:], row, col + 1)
+        elif col - 1 >= 0 and matrix[row * cols + col - 1] == path[0]:
+            return self.find_path(matrix, rows, cols, path[1:], row, col - 1)
+        elif row + 1 < rows and matrix[(row + 1) * cols + col] == path[0]:
+            return self.find_path(matrix, rows, cols, path[1:], row + 1, col)
+        elif row - 1 >= 0 and matrix[(row - 1) * cols + col] == path[0]:
+            return self.find_path(matrix, rows, cols, path[1:], row - 1, col)
+        else:
+            return False
 
 matrix = [
     'a', 'b', 't', 'g',
     'c', 'f', 'c', 's',
     'j', 'd', 'e', 'h'
 ]
-Solution.has_path(matrix, 3, 4, "bfce")
+print(Solution().has_path(matrix, 3, 4, 'bfce'))
+print(Solution2().has_path(matrix, 3, 4, 'bfce'))
