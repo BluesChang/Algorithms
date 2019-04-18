@@ -1,2 +1,2 @@
 # Algorithms
-Algorithms and data structures implemented in Python
+为找工作准备面试复习算法，此库为各类算法题实现。
