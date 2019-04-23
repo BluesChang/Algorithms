@@ -19,6 +19,8 @@ class Solution:
         slow_node = head.next
         fast_node = head.next.next
         while slow_node != fast_node:
+            if slow_node is Node or fast_node is None:
+                return None
             slow_node = slow_node.next
             fast_node = fast_node.next.next
         slow_node = head
