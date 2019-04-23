@@ -28,10 +28,10 @@ class Solution:
         if T1 is not None and T2 is not None:
             if self.equal(T1.val, T2.val):
                 result = self.does_tree1_have_tree2(T1, T2)
-            if (not result):
-                result = self.isSubtree(T1.left, T2)
-            if (not result):
-                result = self.isSubtree(T1.right, T2)
+            if not result:
+                result = self.has_subtree(T1.left, T2)
+            if not result:
+                result = self.has_subtree(T1.right, T2)
         return result
 
     def does_tree1_have_tree2(self, T1, T2):
@@ -41,7 +41,6 @@ class Solution:
             return False
         if not self.equal(T1.val, T2.val):
             return False
-
         return self.does_tree1_have_tree2(T1.left, T2.left) and self.does_tree1_have_tree2(T1.right, T2.right)
 
     def equal(self, num1, num2):
