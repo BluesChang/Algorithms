@@ -7,8 +7,7 @@ class Solution:
     def print_from_top_to_bottom(self, root):
         if not root:
             return
-        queue = []
-        queue.append(root)
+        queue = [root]
         while queue:
             node = queue.pop(0)
             print(node.val)
