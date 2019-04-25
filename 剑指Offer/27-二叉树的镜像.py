@@ -10,13 +10,13 @@ class TreeNode:
 
 
 class Solution:
-    def mirror_recursively(self, node):
-        if node is None:
+    def mirror_recursively(self, root):
+        if root is None:
             return
-        if node.left is None and node.right is None:
+        if root.left is None and root.right is None:
             return
-        node.left, node.right = node.right, node.left
-        if node.left is not None:
-            self.mirror_recursively(node.left)
-        if node.right is not None:
-            self.mirror_recursively(node.right)
+        root.left, root.right = root.right, root.left
+        if root.left is not None:
+            self.mirror_recursively(root.left)
+        if root.right is not None:
+            self.mirror_recursively(root.right)
