@@ -4,10 +4,12 @@
 在一个排序的链表中，如何删除重复的节点？例如，链表1->2->3->3->4->4->5 处理后为 1->2->5。
 '''
 
+
 class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
+
 
 class Solution:
 
@@ -44,6 +46,7 @@ class Solution:
             current_node.next = Node(vals[i])
             current_node = current_node.next
         return head_node
+
 
 head_node = None
 Solution().show(head_node)
