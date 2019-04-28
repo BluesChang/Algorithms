@@ -29,9 +29,4 @@ class Solution:
                 cloned_node.next = None
             node = node.next
             cloned_node = cloned_node.next
-        node = cloned_head
-        while node is not None:
-            if node.random:
-                node.random = cloned_map[node.random]
-            node = node.next
         return cloned_head
