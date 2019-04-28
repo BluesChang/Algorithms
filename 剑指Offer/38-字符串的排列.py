@@ -22,4 +22,5 @@ class Solution:
                 str = ''.join(str)
                 self.permutation_core(str, begin + 1, end)
 
+
 print(Solution().permutation('abcd'))
