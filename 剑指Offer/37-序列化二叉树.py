@@ -18,7 +18,7 @@ class Solution:
 
         def spanning_tree():
             data = next(serialize)
-            if data ='$':
+            if data == '$':
                 return None
             node = TreeNode(data)
             node.left = spanning_tree()
