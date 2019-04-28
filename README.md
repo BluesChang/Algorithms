@@ -14,4 +14,4 @@
 
 ## LintCode
 
-为LintCode算法题Python3实现。目前主要为LintCode-->阶梯训练-->《剑指Offer》Python3实现。
+为LintCode算法题Python3实现。目前主要为LintCode-->阶梯训练-->《剑指Offer》的Python3实现。
