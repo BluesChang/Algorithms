@@ -18,6 +18,7 @@ class Solution:
         else:
             for char in range(begin, end):
                 str = list(str)
+                print(str)
                 str[char], str[begin] = str[begin], str[char]
                 str = ''.join(str)
                 self.permutation_core(str, begin + 1, end)
