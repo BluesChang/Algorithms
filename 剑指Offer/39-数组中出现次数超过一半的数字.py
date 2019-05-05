@@ -13,6 +13,8 @@
 
 class Solution:
     def more_than_half_num(self, numbers):
+        if not numbers:
+            return
         key, count = None, 0
         for num in numbers:
             if key is None:
