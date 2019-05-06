@@ -6,12 +6,43 @@
 '''
 解法一：基于Partition函数（即快排）的时间复杂度为O(n)的算法
 '''
+
+
+class Solution:
+    def more_than_half_num(self, numbers):
+        if not numbers:
+            return
+        middle = len(numbers) >> 1
+        start = 0
+        end = len(numbers) - 1
+        index = self.partition(numbers, start, end)
+        while index != middle:
+            if index > middle:
+                end = index - 1
+                index = self.partition(numbers, start, end)
+            else:
+                start = index + 1
+                index = self.partition(numbers, start, end)
+        result = numbers[middle]
+        return result
+
+    def partition(self, numbers, start, end):
+        key = numbers[end]
+        i = start - 1
+        for j in range(start, end):
+            if numbers[j] <= key:
+                i += 1
+                numbers[i], numbers[j] = numbers[j], numbers[i]
+        numbers[i + 1], numbers[end] = numbers[end], numbers[i + 1]
+        return i + 1
+
+
 '''
 解法二：根据数组特点找出时间复杂度为O(n)的算法
 '''
 
 
-class Solution:
+class Solution2:
     def more_than_half_num(self, numbers):
         if not numbers:
             return
