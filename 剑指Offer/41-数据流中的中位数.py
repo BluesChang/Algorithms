@@ -9,7 +9,7 @@ class Solution:
     min = []
     max = []
 
-    def insert_num(num):
+    def insert(num):
         if not num:
             return
         heapq.heappush(max, num)
@@ -18,7 +18,7 @@ class Solution:
 
     def get_median():
         if len(max) > len(min):
-            median = float(max[0])
+            median = heapq.nsmallest(1, max)
         else:
-            median = (max[0] + min[-1]) / 2
+            median = (heapq.nlargest(1, min) + heapq(1, max)) / 2
         return median
