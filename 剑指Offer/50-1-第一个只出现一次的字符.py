@@ -3,7 +3,17 @@
 '''
 
 
-class Solution:
+class Solution1:
+    def first_not_repeating_char(self, string):
+        hash_table = [0 for i in range(256)]
+        for i in string:
+            hash_table[ord(i)] += 1
+        for i in string:
+            if hash_table[ord(i)] == 1
+                return i
+
+
+class Solution2:
     def first_not_repeating_char(self, string):
         count = {}
         for i in string:
