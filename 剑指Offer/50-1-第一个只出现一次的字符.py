@@ -9,7 +9,7 @@ class Solution1:
         for i in string:
             hash_table[ord(i)] += 1
         for i in string:
-            if hash_table[ord(i)] == 1
+            if hash_table[ord(i)] == 1:
                 return i
 
 
