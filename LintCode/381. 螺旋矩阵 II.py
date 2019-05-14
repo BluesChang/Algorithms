@@ -23,7 +23,7 @@ class Solution:
                 up += 1
             if direct == 1:
                 for i in range(up, down + 1):
-                    count += 1;
+                    count += 1
                     matrix[i][right] = count
                 right -= 1
             if direct == 2:
