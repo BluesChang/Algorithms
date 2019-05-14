@@ -6,7 +6,8 @@ class Solution:
 
     def generateMatrix(self, n):
         # write your code here
-        if n == 0: return []
+        if n == 0:
+            return []
         matrix = [[0 for i in range(n)] for j in range(n)]
         up = 0
         down = n - 1
