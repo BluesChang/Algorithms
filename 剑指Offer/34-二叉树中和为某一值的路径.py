@@ -12,7 +12,7 @@ class Solution:
         def find_path_core(root, path=[], crurrent_sum=0):
             crurrent_sum += root.val
             path.append(root)
-            if crurrent_sum == target and root.left is None and root.right is None:
+            if crurrent_sum == expected_sum and root.left is None and root.right is None:
                 all_path.append([node.val for node in path])
             if root.left:
                 find_path_core(root.left, path, crurrent_sum)
