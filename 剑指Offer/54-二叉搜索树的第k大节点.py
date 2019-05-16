@@ -7,9 +7,10 @@ class Solution:
     def kth_node(self, root, k):
         self.result = []
         self.kth_node_core(root)
-        if len(self.result)<k:
-            return
-        return self.result[k - 1]
+        if len(self.result)<k or k<=0:
+            return None
+        else:
+            return self.result[k - 1]
 
     def kth_node_core(self, root):
         if not root:
