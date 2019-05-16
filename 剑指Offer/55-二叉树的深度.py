@@ -7,6 +7,4 @@ class Solution:
     def tree_depth(self, root):
         if not root:
             return 0
-        left = self.tree_depth(root.left)
-        right = self.tree_depth(root.right)
-        return max(left, right) + 1
+        return max(self.tree_depth(root.left), self.tree_depth(root.right)) + 1
