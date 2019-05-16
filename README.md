@@ -6,8 +6,6 @@
 
 为《剑指Offer（第二版）》Python3实现。
 
-所有代码均通过LintCode上的相似题目或自己写的测试用例。
-
 ## LeetCode
 
 为LeetCode算法题Python3实现。
