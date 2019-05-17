@@ -2,6 +2,10 @@
 题目：一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。要求时间复杂度是O(n)，空间复杂度是O(1)。
 '''
 
+'''
+书上的写法
+'''
+
 
 class Solution:
     def find_nums_appear_once(self, data):
@@ -31,4 +35,29 @@ class Solution:
         return num & 1
 
 
-print(Solution().find_nums_appear_once([2, 4, 3, 6, 3, 2, 5, 5]))
+'''
+更简洁的写法
+'''
+
+
+class Solution2:
+    """
+    @param A: An integer array
+    @return: An integer array
+    """
+
+    def singleNumberIII(self, A):
+        # write your code here
+        if not A or len(A) < 2:
+            return
+        result_exclusive_or = 0
+        for num in A:
+            result_exclusive_or ^= num
+        index_of_1 = result_exclusive_or & (-result_exclusive_or)
+        res = [0, 0]
+        for num in A:
+            if (num & index_of_1) != 0:
+                res[0] ^= num
+            else:
+                res[1] ^= num
+        return res
