@@ -32,7 +32,7 @@ class Solution2:
                 index.append(i)
             for i in range(size, len(nums)):
                 max_in_windows.append(nums[index[0]])
-                while index and nums[i] >= nums[index[- 1]]:
+                while index and nums[i] >= nums[index[-1]]:
                     index.pop()
                 if index and index[0] <= i - size:
                     index.popleft()
