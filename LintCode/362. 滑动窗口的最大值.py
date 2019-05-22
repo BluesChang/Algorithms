@@ -27,4 +27,5 @@ class Solution:
             max_in_windows.append(nums[index.popleft()])
         else:
             return []
+
         return max_in_windows
