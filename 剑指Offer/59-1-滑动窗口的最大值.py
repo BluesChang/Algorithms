@@ -27,8 +27,8 @@ class Solution2:
         if nums and 1 <= size <= len(nums):
             index = collections.deque()
             for i in range(size):
-                if index and nums[i] >= nums[index[0]]:
-                    index.clear()
+                while index and nums[i] >= nums[index[-1]]:
+                    index.pop()
                 index.append(i)
             for i in range(size, len(nums)):
                 max_in_windows.append(nums[index[0]])
@@ -38,4 +38,6 @@ class Solution2:
                     index.popleft()
                 index.append(i)
             max_in_windows.append(nums[index.popleft()])
+        else:
+            return []
         return max_in_windows
