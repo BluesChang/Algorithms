@@ -12,13 +12,17 @@ class Solution:
     def insert(num):
         if not num:
             return
-        heapq.heappush(max, num)
-        if len(max) - len(min) > 1:
-            heapq.heappush(min, heapq.heappop(max))
+        if len(max) <= len(min):
+            heapq.heappush(max, -num)
+        else:
+            heapq.heappush(min, num)
+        if -max[0] > min[0]:
+            heapq.heappush(max, -heapq.heappop(min))
+            heapq.heappush(min, -heapq.heappop(max))
 
     def get_median():
         if len(max) > len(min):
-            median = heapq.nsmallest(1, max)[0]
+            median = -heapq.heappop(max)
         else:
-            median = (heapq.nlargest(1, min)[0] + heapq.nsmallest(1, max))[0] / 2
+            median = (-heapq.heappop(max) + heapq.heappop(min)) / 2
         return median
