@@ -18,7 +18,7 @@ class Solution:
 
     def get_median():
         if len(max) > len(min):
-            median = heapq.nsmallest(1, max)
+            median = heapq.nsmallest(1, max)[0]
         else:
-            median = (heapq.nlargest(1, min) + heapq.nsmallest(1, max)) / 2
+            median = (heapq.nlargest(1, min)[0] + heapq.nsmallest(1, max))[0] / 2
         return median
