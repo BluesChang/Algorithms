@@ -14,12 +14,12 @@ class Node:
 
 class Solution:
     def entry_node_of_loop(self, head):
-        if head is None:
+        if head is None or head.next is None:
             return None
         slow_node = head.next
         fast_node = head.next.next
         while slow_node != fast_node:
-            if slow_node is Node or fast_node is None:
+            if fast_node is None or fast_node.next is None or fast_node.next.next is None:
                 return None
             slow_node = slow_node.next
             fast_node = fast_node.next.next
@@ -27,7 +27,7 @@ class Solution:
         while slow_node != fast_node:
             slow_node = slow_node.next
             fast_node = fast_node.next
-        return slow_node
+        return fast_node
 
 
 node1 = Node(1)
