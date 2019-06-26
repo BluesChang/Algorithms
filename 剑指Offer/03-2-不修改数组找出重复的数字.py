@@ -59,7 +59,7 @@ def duplicate2(arr):
 def count_number(arr, start, end):
     count = 0
     for i in range(len(arr)):
-        if arr[i] >= start and arr[i] <= end:
+        if start <= arr[i] <= end:
             count += 1
     return count
 
