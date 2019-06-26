@@ -24,7 +24,7 @@ def PrintListReversingly(head):
 # 栈
 def PrintListReversingly2(head):
     stack = []
-    while head != None:
+    while head is not None:
         stack.append(head.val)
         head = head.next
     while stack:
