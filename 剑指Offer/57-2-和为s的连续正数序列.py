@@ -13,7 +13,7 @@ class Solution:
         while small < big:
             if cur_sum == sum:
                 self.print_continuous_sequence(small, big)
-            while cur_sum > sum and small < big:
+            while cur_sum > sum and small < mid:
                 cur_sum -= small
                 small += 1
                 if cur_sum == sum:
