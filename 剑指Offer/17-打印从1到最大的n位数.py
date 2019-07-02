@@ -9,6 +9,7 @@ class Solution:
     @param n: An integer
     @return: An array storing 1 to the largest number with n digits.
     """
+
     def numbersByRecursion(self, n):
         # write your code here
         if n <= 0:
@@ -34,5 +35,6 @@ class Solution:
         for i in range(10):
             number[index + 1] = str(i)
             self.print_to_max_of_n_digits_recursively(number, length, index + 1)
+
 
 print(Solution().numbersByRecursion(3))
