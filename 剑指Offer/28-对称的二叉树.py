@@ -5,7 +5,7 @@
 
 class Solution:
     def is_symmetrical(self, root):
-        return self.is_symmetrical(root, root)
+        return self.is_symmetrical(root)
 
     def symmetrical(self, root1, root2):
         if root1 is None and root2 is None:
