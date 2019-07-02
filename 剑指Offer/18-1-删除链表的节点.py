@@ -14,7 +14,7 @@ class Solution:
     def delete_node(self, head_node, to_be_deleted_node):
         if not isinstance(head_node, Node) or not isinstance(to_be_deleted_node, Node):
             return
-        if to_be_deleted_node.next != None:
+        if to_be_deleted_node.next is not None:
             next_node = to_be_deleted_node.next
             to_be_deleted_node.val = next_node.val
             to_be_deleted_node.next = next_node.next
@@ -28,7 +28,7 @@ class Solution:
         return head_node
 
     def show(self, head):
-        while head != None:
+        while head is not None:
             print(head.val, end=' ')
             head = head.next
         print()
