@@ -26,7 +26,7 @@ class Solution:
         return count
 
     def check(self, threshold, rows, cols, row, col, visited):
-        if row >= 0 and row < rows and col >= 0 and col < cols and self.get_digit_sum(row) + self.get_digit_sum(
+        if 0 <= row < rows and 0 <= col < cols and self.get_digit_sum(row) + self.get_digit_sum(
                 col) <= threshold and not visited[row * cols + col]:
             return True
         return False
