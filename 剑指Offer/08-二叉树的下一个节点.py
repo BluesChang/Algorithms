@@ -25,13 +25,13 @@ class TreeNode:
 def next_node(pNode):
     if not pNode:
         return None
-    if pNode.right != None:
-        pNode = pNode.left
-        while pNode.left != None:
+    if pNode.right is not None:
+        pNode = pNode.right
+        while pNode.left is not None:
             pNode = pNode.left
         return pNode
-    elif pNode.parent != None:
-        while pNode.parent != None and pNode.parent.right == pNode:
+    elif pNode.parent is not None:
+        while pNode.parent is not None and pNode.parent.right == pNode:
             pNode = pNode.parent
         return pNode.parent
     else:
