@@ -23,7 +23,7 @@ class Solution:
         if len(path) == path_length:
             return True
         has_path = False
-        if row >= 0 and row < rows and col >= 0 and col < cols and matrix[row * cols + col] == path[path_length] and not \
+        if 0 <= row < rows and 0 <= col < cols and matrix[row * cols + col] == path[path_length] and not \
                 visited[row * cols + col]:
             path_length += 1
             visited[row * cols + col] = True
