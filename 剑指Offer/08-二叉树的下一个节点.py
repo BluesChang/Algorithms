@@ -34,5 +34,4 @@ def next_node(pNode):
         while pNode.parent is not None and pNode.parent.right == pNode:
             pNode = pNode.parent
         return pNode.parent
-    else:
-        return pNode.parent
+
