@@ -9,8 +9,8 @@ class Solution:
             return None
         if root == node1 or root == node2:
             return root
-        left_result = self.lowestCommonAncestor(root.left, node1, node2)
-        right_result = self.lowestCommonAncestor(root.right, node1, node2)
+        left_result = self.get_last_common_parent(root.left, node1, node2)
+        right_result = self.get_last_common_parent(root.right, node1, node2)
         # A 和 B 一边一个
         if left_result and right_result:
             return root
