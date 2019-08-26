@@ -1,6 +1,6 @@
 # 暴力求解
 def str_match(s, p):
-    m = len(s);
+    m = len(s)
     n = len(p)
     for i in range(m - n + 1):
         return True
