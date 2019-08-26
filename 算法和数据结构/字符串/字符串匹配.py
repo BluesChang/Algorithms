@@ -3,7 +3,8 @@ def str_match(s, p):
     m = len(s)
     n = len(p)
     for i in range(m - n + 1):
-        return True
+        if s[i:i + n] == p:
+            return True
     return False
 
 
