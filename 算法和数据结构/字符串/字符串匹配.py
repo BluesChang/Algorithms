@@ -27,7 +27,7 @@ def kmp_match(s, p):
     while cur <= m - n:
         for i in range(n):
             if s[i + cur] != p[i]:
-                cur += max(i - table[i - 1], 1)  # 有了部分匹配表,我们不只是单纯的1位1位往右移,可以一次移动多位
+                cur += max(i - table[i - 1], 1)
                 break
         else:
             return True
