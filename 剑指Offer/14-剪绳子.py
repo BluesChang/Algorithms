@@ -38,7 +38,7 @@ def max_product_after_cutting_solution2(length):
     if length == 3:
         return 2
     times_of_3 = length // 3
-    if length - times_of_3 * 2 == 1:
+    if length - times_of_3 * 3 == 1:
         times_of_3 -= 1
     times_of_2 = (length - times_of_3 * 3) / 2
     return (3 ** times_of_3) * (2 ** times_of_2)
